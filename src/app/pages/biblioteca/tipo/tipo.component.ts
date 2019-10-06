@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoComponent implements OnInit {
 
+  submitted = false;
+  titulo ='Formulario Tipo';
+
   constructor() { }
 
   ngOnInit() {

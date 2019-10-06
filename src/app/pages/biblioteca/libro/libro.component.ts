@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./libro.component.scss']
 })
 export class LibroComponent implements OnInit {
+  
+  submitted = false;
+  titulo ='Formulario Libros';
 
   constructor() { }
 

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExistenciaComponent implements OnInit {
 
+  submitted = false;
+  titulo ='Formulario Existencia';
+
   constructor() { }
 
   ngOnInit() {
