@@ -5,30 +5,24 @@
                 <h1>{{ titulo }} </h1>
                 <form >
                         <div class="form-group">
-                            <label>Nombres y Apellidos</label>
-                            <input type="text" formControlName="nya" class="form-control" />
-                        </div>                    
+                            <label>{{ nombres }}</label>
+                            <input type="text" [(ngModel)]= "nombres" name="nombres" class="form-control" />
+                        </div>  
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" formControlName="email" class="form-control"  />
-                        </div>
+                            <label>{{ apellidos }}</label>
+                            <input type="text" [(ngModel)]= "apellidos" name="apellidos"    class="form-control" />
+                        </div> 
                         <div class="form-group">
-                            <label>Asunto</label>
-                            <input type="text" formControlName="asunto" class="form-control" />
-                            </div>
+                            <label>{{ fecha }}</label>
+                            <input type="text" [(ngModel)]= "fecha" name="fecha"    class="form-control" />
+                        </div> 
                         <div class="form-group">
-                            <label for="postre"> Postre</label>
-                            <select class="form-control" >
-                                <option value="">Seleccionar</option>
-                                <option value="Crema Volteada">Crema Volteada</option>
-                                <option value="Gelatina de Fresa">Gelatina de Fresa</option>
-                                <option value="Keke de Naranja">Keke de Naranja</option>
-                                <option value="Pie de Manzana">Pie de Manzana</option>
-                                <option value="Torta de Chocolate">Torta de Chocolate</option>	
-                            </select>
-                        </div>
+                            <label>{{ nacionalidad }}</label>
+                            <input type="text"  [(ngModel)]= "nacionalidad" name="nacionalidad"  class="form-control" />
+                        </div>                   
+                        
                         <div class="form-group">
-                            <button  class="btn btn-primary">Aceptar</button>
+                            <button  class="btn btn-primary" (click)="saveForm()">Aceptar</button>
                         </div>
                 </form>
             </div>
