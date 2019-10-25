@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-tipo',
@@ -9,10 +10,18 @@ export class TipoComponent implements OnInit {
 
   submitted = false;
   titulo ='Formulario Tipo';
+  tipoForm: FormGroup;
 
-  constructor() { }
+  constructor(protected fb:FormBuilder) { }
 
   ngOnInit() {
+  }
+
+  createForm(){
+    this.tipoForm = this.fb.group({
+      id: '',
+      descripcion: '',
+    })
   }
 
 }
