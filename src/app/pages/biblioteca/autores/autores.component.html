@@ -1,28 +1,55 @@
-
+{{autoresForm.value|json}}
 <div class="container"> 
         <div class="row">
             <div class="col-md-12 mt-5">
                 <h1>{{ titulo }} </h1>
-                <form >
+                <table>
+                    <tr>
+                        <td>Code</td>
+                        <td>Name</td>
+                        <td>LastName</td>
+                        <td>Fecha Nacimineto</td>
+                        <td>Fecha Muerte</td>
+                        <td>Lugar de Nacimiento</td>
+                    </tr>
+                    <tr *ngFor = "let autor of autores">
+                        <td>{{autor.code}}</td>
+                        <td>{{autor.name}}</td>
+                        <td>{{autor.lastname}}</td>
+                        <td>{{autor.bd_year}}</td>
+                        <td>{{autor.death_year}}</td>
+                        <td>{{autor.bd_place}}</td>
+                    </tr>
+                </table>
+
+                <form [formGroup]="autoresForm">
                         <div class="form-group">
-                            <label>{{ nombres }}</label>
-                            <input type="text" [(ngModel)]= "nombres" name="nombres" class="form-control" />
+                            <label>Codigo</label>
+                            <input type="text" formControlName="code" class="form-control" />
                         </div>  
                         <div class="form-group">
-                            <label>{{ apellidos }}</label>
-                            <input type="text" [(ngModel)]= "apellidos" name="apellidos"    class="form-control" />
+                            <label>Nombre</label>
+                            <input type="text" formControlName="name"    class="form-control" />
                         </div> 
                         <div class="form-group">
-                            <label>{{ fecha }}</label>
-                            <input type="text" [(ngModel)]= "fecha" name="fecha"    class="form-control" />
+                            <label>Apellido</label>
+                            <input type="text" formControlName="lastname"    class="form-control" />
                         </div> 
                         <div class="form-group">
-                            <label>{{ nacionalidad }}</label>
-                            <input type="text"  [(ngModel)]= "nacionalidad" name="nacionalidad"  class="form-control" />
-                        </div>                   
+                            <label>Fecha Nacimiento</label>
+                            <input type="text"  formControlName="bd_year"  class="form-control" />
+                        </div>     
+                        <div class="form-group">
+                            <label>Fecha Muerte</label>
+                            <input type="text"  formControlName="death_year"  class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Lugar de Nacimiento</label>
+                            <input type="text"  formControlName="bd_place"  class="form-control" />
+                        </div>              
                         
                         <div class="form-group">
-                            <button  class="btn btn-primary" (click)="saveForm()">Aceptar</button>
+                            <button  class="btn btn-primary" (click)="saveAutores()">Aceptar</button>
                         </div>
                 </form>
             </div>

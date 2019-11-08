@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AutoresComponent, 
     TipoComponent, 
     AreasComponent, 
-    LibroComponent, 
+    LibroComponent,   
     ExistenciaComponent],
   imports: [
     CommonModule,

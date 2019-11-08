@@ -12,9 +12,19 @@ export class AreasComponent implements OnInit {
   submitted = false;
   titulo ='Formulario Areas';
 
-  constructor() { }
+  areaForm: FormGroup;
+
+  constructor(protected fb:FormBuilder) { 
+    this.createForm();
+  }
   
   ngOnInit() {
+  }
+  createForm(){
+    this.areaForm = this.fb.group({      
+      code: ['', Validators.required],
+      descrption: ['', Validators.required],
+    })
   }
 
   
